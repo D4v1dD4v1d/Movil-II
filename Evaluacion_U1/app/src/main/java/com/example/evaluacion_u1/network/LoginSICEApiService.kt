@@ -21,4 +21,22 @@ interface LoginSICEApiService {
     )
     @POST("/ws/wsalumnos.asmx")
     fun getAcademicProfile(@Body body: RequestBody): Call<Envelope>
+
+}
+
+interface Kardex {
+    @Headers(
+        "Content-Type: text/xml; charset=utf-8",
+        "SOAPAction: http://tempuri.org/accesoLogin"
+    )
+    @POST("/ws/wsalumnos.asmx")
+    fun login(@Body body: RequestBody): Call<ResponseBody>
+
+    @Headers(
+        "Content-Type: text/xml; charset=utf-8",
+        "SOAPAction: http://tempuri.org/getAllKardexConPromedioByAlumno"
+    )
+    @POST("/ws/wsalumnos.asmx")
+    fun getKardex(@Body body: RequestBody): Call<Envelope>
+
 }
