@@ -7,6 +7,9 @@ import retrofit2.http.Body
 import retrofit2.http.Headers
 import retrofit2.http.POST
 import com.example.evaluacion_u1.model.Envelope
+import com.example.evaluacion_u1.model.EnvelopeCalUnidad
+import com.example.evaluacion_u1.model.EnvelopeKardex
+
 interface LoginSICEApiService {
     @Headers(
         "Content-Type: text/xml; charset=utf-8",
@@ -37,6 +40,22 @@ interface Kardex {
         "SOAPAction: http://tempuri.org/getAllKardexConPromedioByAlumno"
     )
     @POST("/ws/wsalumnos.asmx")
-    fun getKardex(@Body body: RequestBody): Call<Envelope>
+    fun getKardex(@Body body: RequestBody): Call<EnvelopeKardex>
+
+}
+interface CalUnidad {
+    @Headers(
+        "Content-Type: text/xml; charset=utf-8",
+        "SOAPAction: http://tempuri.org/accesoLogin"
+    )
+    @POST("/ws/wsalumnos.asmx")
+    fun login(@Body body: RequestBody): Call<ResponseBody>
+
+    @Headers(
+        "Content-Type: text/xml; charset=utf-8",
+        "SOAPAction: http://tempuri.org/getCalifUnidadesByAlumno"
+    )
+    @POST("/ws/wsalumnos.asmx")
+    fun getCalUnidad(@Body body: RequestBody): Call<EnvelopeCalUnidad>
 
 }
