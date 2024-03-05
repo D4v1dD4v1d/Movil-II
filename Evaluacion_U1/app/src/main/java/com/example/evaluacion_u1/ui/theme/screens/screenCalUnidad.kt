@@ -2,6 +2,7 @@ package com.example.evaluacion_u1.ui.theme.screens
 
 import android.content.Context
 import android.util.Log
+import android.widget.Toast
 import androidx.navigation.NavController
 import com.example.evaluacion_u1.data.RetrofitClient
 import com.example.evaluacion_u1.model.AlumnoAcademicoResult
@@ -24,11 +25,11 @@ fun GetCalUnidad(
     val service = RetrofitClient(context).retrofitService3
     val bodyCalUnidad = CalUnidadRequestBody()
     service.getCalUnidad(bodyCalUnidad).enqueue(object : Callback<EnvelopeCalUnidad> {
-        override fun onResponse(call: Call<EnvelopeKardex>, response: Response<EnvelopeKardex>) {
+        override fun onResponse(call: Call<EnvelopeCalUnidad>, response: Response<EnvelopeCalUnidad>) {
             if (response.isSuccessful) {
                 val envelope = response.body()
                 val CalUnidadResultJson: String? =
-                    envelope?.BodyCalUnidad?.getCalifUnidadesByAlumnoResponse?.getCalifUnidadesByAlumnoResult
+                    envelope?.bodyCalUnidad?.getCalifUnidadesByAlumnoResponse?.getCalifUnidadesByAlumnoResult
 
                 // Deserializa la cadena JSON a AlumnoAcademicoResult
                 val json = Json { ignoreUnknownKeys = true }
@@ -57,10 +58,12 @@ fun GetCalUnidad(
         </soap:Envelope>
     """.trimIndent().toRequestBody("text/xml; charset=utf-8".toMediaTypeOrNull())
         }
-        override fun onFailure(call: Call<EnvelopeKardex>, t: Throwable) {
+        override fun onFailure(call: Call<EnvelopeCalUnidad>, t: Throwable) {
             t.printStackTrace()
             showError(context, "Error en la solicitud del perfil académico")
         }
+
+
     })
 }
 private fun CalUnidadRequestBody(): RequestBody {
@@ -73,4 +76,7 @@ private fun CalUnidadRequestBody(): RequestBody {
           </soap:Body>
         </soap:Envelope>
         """.trimIndent().toRequestBody("text/xml; charset=utf-8".toMediaTypeOrNull())
+}
+private fun showError(context: Context, message: String) {
+    Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
 }

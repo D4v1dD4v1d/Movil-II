@@ -7,7 +7,6 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
 import com.example.evaluacion_u1.data.RetrofitClient
 import com.example.evaluacion_u1.model.AlumnoAcademicoResult
-import com.example.evaluacion_u1.model.Envelope
 import com.example.evaluacion_u1.model.EnvelopeKardex
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
