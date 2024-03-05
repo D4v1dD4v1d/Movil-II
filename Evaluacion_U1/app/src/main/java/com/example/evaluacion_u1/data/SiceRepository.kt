@@ -20,6 +20,7 @@ import android.util.Log
 import com.example.evaluacion_u1.network.AddCookiesInterceptor
 import com.example.evaluacion_u1.network.CalFinal
 import com.example.evaluacion_u1.network.CalUnidad
+import com.example.evaluacion_u1.network.CargaAcademica
 import com.example.evaluacion_u1.network.LoginSICEApiService
 import com.example.evaluacion_u1.network.Kardex
 
@@ -80,5 +81,8 @@ class RetrofitClient(context: Context) {
     }
     val retrofitService4: CalFinal by lazy {
         retrofit.create(CalFinal::class.java)
+    }
+    val retrofitService5: CargaAcademica by lazy {
+        retrofit.create(CargaAcademica::class.java)
     }
 }

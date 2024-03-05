@@ -23,3 +23,45 @@ data class getCargaAcademicaByAlumnoResponse @JvmOverloads constructor(
     @field:Element(name = "getCargaAcademicaByAlumnoResult", required = false)
     var getCargaAcademicaByAlumnoResult: String = ""
 )
+@Serializable
+data class CargaAcademicaItem(
+    @SerialName("Semipresencial")
+    val semipresencial: String?,
+
+    @SerialName("Observaciones")
+    val observaciones: String?,
+
+    @SerialName("docente")
+    val docente: String?,
+
+    @SerialName("clvOficial")
+    val clvOficial: String?,
+
+    @SerialName("Sabado")
+    val sabado: String?,
+
+    @SerialName("Viernes")
+    val viernes: String?,
+
+    @SerialName("Jueves")
+    val jueves: String?,
+
+    @SerialName("Miercoles")
+    val miercoles: String?,
+
+    @SerialName("Martes")
+    val martes: String?,
+
+    @SerialName("Lunes")
+    val lunes: String?,
+
+    @SerialName("EstadoMateria")
+    val estadoMateria: String?,
+    @SerialName("CreditosMateria")
+    val creditosMateria: Int?,
+    @SerialName("materia")
+    val materia: String?,
+    @SerialName("grupo")
+    val grupo: String?,
+
+    )

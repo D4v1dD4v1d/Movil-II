@@ -80,3 +80,6 @@ private fun CalUnidadRequestBody(): RequestBody {
 private fun showError(context: Context, message: String) {
     Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
 }
+fun MostrarCalUnidad(navController: NavController, viewModel: DataViewModel){
+
+}

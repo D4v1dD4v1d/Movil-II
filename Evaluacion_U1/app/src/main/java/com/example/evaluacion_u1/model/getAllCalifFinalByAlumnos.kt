@@ -1,5 +1,6 @@
 package com.example.evaluacion_u1.model
 
+import kotlinx.serialization.Serializable
 import org.simpleframework.xml.Element
 import org.simpleframework.xml.Root
 
@@ -21,3 +22,11 @@ data class getAllCalifFinalByAlumnosResponse  @JvmOverloads constructor(
     var getAllCalifFinalByAlumnosResult: String = ""
 )
 
+@Serializable
+data class AllCalificacionFinal(
+    val calif: Int,
+    val acred: String,
+    val grupo: String,
+    val materia: String,
+    val observaciones: String
+    )
