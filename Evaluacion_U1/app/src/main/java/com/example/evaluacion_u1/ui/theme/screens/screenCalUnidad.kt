@@ -68,11 +68,11 @@ fun GetCalUnidad(
 }
 private fun CalUnidadRequestBody(): RequestBody {
     return """
-                <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+           <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
           <soap:Body>
-            <getAllKardexConPromedioByAlumno xmlns="http://tempuri.org/">
-              <aluLineamiento>3</aluLineamiento>
-            </getAllKardexConPromedioByAlumno>
+            <getCalifUnidadesByAlumnoResponse xmlns="http://tempuri.org/">
+              <getCalifUnidadesByAlumnoResult>string</getCalifUnidadesByAlumnoResult>
+            </getCalifUnidadesByAlumnoResponse>
           </soap:Body>
         </soap:Envelope>
         """.trimIndent().toRequestBody("text/xml; charset=utf-8".toMediaTypeOrNull())

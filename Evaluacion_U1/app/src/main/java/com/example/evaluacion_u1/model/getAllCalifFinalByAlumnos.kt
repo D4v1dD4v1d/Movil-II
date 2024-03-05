@@ -4,20 +4,20 @@ import org.simpleframework.xml.Element
 import org.simpleframework.xml.Root
 
 @Root(name = "Envelope", strict = false)
-data class EnvelopeCalUnidad @JvmOverloads constructor(
+data class EnvelopeCalFinal @JvmOverloads constructor(
     @field:Element(name = "Body", required = false)
-    var bodyCalUnidad: BodyCalUnidad = BodyCalUnidad()
+    var bodyCalFinal: BodyCalFinal = BodyCalFinal()
 )
 
 @Root(name = "Body", strict = false)
-data class BodyCalUnidad @JvmOverloads constructor(
-    @field:Element(name = "getCalifUnidadesByAlumnoResponse ", required = false)
-    var getCalifUnidadesByAlumnoResponse : getCalifUnidadesByAlumnoResponse  = getCalifUnidadesByAlumnoResponse ()
+data class BodyCalFinal @JvmOverloads constructor(
+    @field:Element(name = "getAllCalifFinalByAlumnosResponse ", required = false)
+    var getAllCalifFinalByAlumnosResponse : getAllCalifFinalByAlumnosResponse  = getAllCalifFinalByAlumnosResponse ()
 )
 
-@Root(name = "getAllKardexConPromedioByAlumnoResponse", strict = false)
-data class getCalifUnidadesByAlumnoResponse  @JvmOverloads constructor(
-    @field:Element(name = "getCalifUnidadesByAlumnoResult", required = false)
-    var getCalifUnidadesByAlumnoResult: String = ""
+@Root(name = "getAllCalifFinalByAlumnosResponse", strict = false)
+data class getAllCalifFinalByAlumnosResponse  @JvmOverloads constructor(
+    @field:Element(name = "getAllCalifFinalByAlumnosResult", required = false)
+    var getAllCalifFinalByAlumnosResult: String = ""
 )
 

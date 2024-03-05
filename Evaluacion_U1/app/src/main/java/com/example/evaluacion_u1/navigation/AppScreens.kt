@@ -4,4 +4,6 @@ sealed class AppScreens (val route: String){
     object loginSice: AppScreens(route = "login_screen")
     object dataScreen: AppScreens(route= "data_screen")
     object kardexScreen: AppScreens(route= "kardex_screen")
+    object CalUnidadScreen: AppScreens(route= "calUnidad_screen")
+
 }

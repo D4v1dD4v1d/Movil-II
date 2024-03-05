@@ -17,6 +17,7 @@ fun AppNavigation(){
         composable(route ="login"){ PantallaPrincipal(navController = navController, viewModel = viewModel) }
         composable(route="data"){ mostrarDatos(navController = navController, viewModel= viewModel)}
         composable(route="kardex"){ MostrarKardex(navController = navController, viewModel= viewModel)}
+        composable(route="CalUnidad"){ MostrarKardex(navController = navController, viewModel= viewModel)}
     }
 
 }
