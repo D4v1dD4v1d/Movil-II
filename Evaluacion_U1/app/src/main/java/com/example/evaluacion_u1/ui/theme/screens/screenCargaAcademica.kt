@@ -86,7 +86,7 @@ private fun showError(context: Context, message: String) {
 }
 @Composable
 fun MostrarCargaAcademica(navController: NavController, viewModel: DataViewModel){
-    val Carga = viewModel.CargaAcademicaItem
+    /*val Carga = viewModel.CargaAcademicaItem
     Image(
         painter = painterResource(id = R.drawable.fondodate),
         contentDescription = "My background image",
@@ -149,5 +149,5 @@ fun MostrarCargaAcademica(navController: NavController, viewModel: DataViewModel
         Column(modifier = Modifier.padding(16.dp)) {
             Text(text = "No se pudo obtener la Carga Academica.")
         }
-    }
+    }*/
 }

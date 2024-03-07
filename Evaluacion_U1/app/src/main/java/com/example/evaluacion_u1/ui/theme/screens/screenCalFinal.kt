@@ -91,7 +91,7 @@ private fun showError(context: Context, message: String) {
 @Composable
 fun MostrarCalFinal(navController: NavController, viewModel: DataViewModel){
 
-    val Calificacion = viewModel.AllCalificacionFinal
+    /*val Calificacion = viewModel.AllCalificacionFinal
     //val hola=Calificacion?.grupo?:"Esto resulto mal"
     Log.e("Calificacion",hola)
     Image(
@@ -122,5 +122,5 @@ fun MostrarCalFinal(navController: NavController, viewModel: DataViewModel){
         Column(modifier = Modifier.padding(16.dp)) {
             Text(text = "No se pudo obtener la Calificacion Final.")
         }
-    }
+    }*/
 }

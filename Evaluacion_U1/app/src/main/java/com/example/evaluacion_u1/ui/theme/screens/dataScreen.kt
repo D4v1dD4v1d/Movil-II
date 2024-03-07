@@ -103,8 +103,10 @@ fun mostrarDatos(navController: NavController, viewModel: DataViewModel) {
                 Text(text = "Carga Academica")
             }
             Button(modifier = Modifier.align(Alignment.CenterHorizontally),
-                onClick = { navController.navigate("CalUnidad") }) {
-                Text(text = "Unidades")
+                onClick = {
+                    iniciarCalUnidad(context, user, pass, navController,viewModel)
+                    navController.navigate("CalUnidad") }) {
+                Text(text = "Calificaciones Por unidad")
             }
             // Agrega más campos aquí
             Spacer(modifier = Modifier.padding(30.dp))
@@ -136,6 +138,35 @@ private fun iniciarCalFinal(
         override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
             if (response.isSuccessful) {
                 Log.w("exito", "se obtuvo el perfil")
+                GetCalFinal(context, navController, viewModel)
+            } else {
+                showError(
+                    context,
+                    "Error en la autenticación. Código de respuesta: ${response.code()}"
+                )
+            }
+        }
+
+        override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+            t.printStackTrace()
+            showError(context, "Error en la solicitud")
+        }
+    })
+}
+
+private fun iniciarCalUnidad(
+    context: Context,
+    matricula: String,
+    contrasenia: String,
+    navController: NavController,
+    viewModel: DataViewModel
+) {
+    val bodyLogin = loginRequestBody(matricula, contrasenia)
+    val service = RetrofitClient(context).retrofitService3
+    service.login(bodyLogin).enqueue(object : Callback<ResponseBody> {
+        override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+            if (response.isSuccessful) {
+                Log.w("exito", "se obtuvo el la calificacion o")
                 GetCalUnidad(context, navController, viewModel)
             } else {
                 showError(

@@ -58,7 +58,7 @@ interface CalUnidad {
         "SOAPAction: http://tempuri.org/getCalifUnidadesByAlumno"
     )
     @POST("/ws/wsalumnos.asmx")
-    fun getCalUnidad(@Body body: RequestBody): Call<EnvelopeCalUnidad>
+    fun getCalUnidad(@Body BodyCalUnidad: RequestBody): Call<EnvelopeCalUnidad>
 
 }
 
