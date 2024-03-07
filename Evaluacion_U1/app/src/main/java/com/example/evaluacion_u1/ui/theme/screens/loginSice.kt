@@ -303,7 +303,7 @@ private fun getAcademicProfile(
 }
 
 
-private fun loginRequestBody(matricula: String, contrasenia: String): RequestBody {
+ fun loginRequestBody(matricula: String, contrasenia: String): RequestBody {
     return """
         <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
           <soap:Body>
