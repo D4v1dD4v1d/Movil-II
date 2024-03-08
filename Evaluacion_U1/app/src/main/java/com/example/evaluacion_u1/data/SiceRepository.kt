@@ -18,12 +18,12 @@ package com.example.evaluacion_u1.data
 import android.content.Context
 import android.util.Log
 import com.example.evaluacion_u1.network.AddCookiesInterceptor
-import com.example.evaluacion_u1.network.CalFinal
-import com.example.evaluacion_u1.network.CalUnidad
-import com.example.evaluacion_u1.network.CargaAcademica
+import com.example.evaluacion_u1.network.AllCalificacionFin
+import com.example.evaluacion_u1.network.CalifByUnidades
+import com.example.evaluacion_u1.network.CalificacionPorUnidadd
+import com.example.evaluacion_u1.network.CargaAcademicaApiService
+import com.example.evaluacion_u1.network.KardexApiService
 import com.example.evaluacion_u1.network.LoginSICEApiService
-import com.example.evaluacion_u1.network.Kardex
-
 import com.example.evaluacion_u1.network.ReceivedCookiesInterceptor
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -72,17 +72,21 @@ class RetrofitClient(context: Context) {
     val retrofitService: LoginSICEApiService by lazy {
         retrofit.create(LoginSICEApiService::class.java)
         }
+    val retrofitService2: CargaAcademicaApiService by lazy {
+        retrofit.create(CargaAcademicaApiService::class.java)
+    }
+    val retrofitService3: KardexApiService by lazy {
+        retrofit.create(KardexApiService::class.java)
+    }
+    val retrofitService4: CalifByUnidades by lazy {
+        retrofit.create(CalifByUnidades::class.java)
+    }
+    val retrofitService5: AllCalificacionFin by lazy {
+        retrofit.create(AllCalificacionFin::class.java)
+    }
+    ///////////////
 
-    val retrofitService2: Kardex by lazy {
-        retrofit.create(Kardex::class.java)
-    }
-    val retrofitService3: CalUnidad by lazy {
-        retrofit.create(CalUnidad::class.java)
-    }
-    val retrofitService4: CalFinal by lazy {
-        retrofit.create(CalFinal::class.java)
-    }
-    val retrofitService5: CargaAcademica by lazy {
-        retrofit.create(CargaAcademica::class.java)
+    val retrofitService6: CalificacionPorUnidadd by lazy {
+        retrofit.create(CalificacionPorUnidadd::class.java)
     }
 }

@@ -49,6 +49,7 @@ android {
 
 dependencies {
     implementation ("androidx.compose.foundation:foundation:1.2.0-alpha04")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2")
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
@@ -66,7 +67,6 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.7.7")
     implementation("androidx.tracing:tracing-perfetto-handshake:1.0.0")
     implementation("androidx.compose.material3:material3-android:1.2.0")
-    implementation ("com.google.code.gson:gson:2.8.8") // Asegúrate de verificar la última versión en el repositorio Maven de Gson
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

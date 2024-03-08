@@ -6,24 +6,25 @@ import org.simpleframework.xml.Element
 import org.simpleframework.xml.Root
 
 @Root(name = "Envelope", strict = false)
-data class EnvelopeCalUnidad @JvmOverloads constructor(
+data class EnvelopeCalUnit @JvmOverloads constructor(
     @field:Element(name = "Body", required = false)
-    var bodyCalUnidad: BodyCalUnidad = BodyCalUnidad()
+    var BodyCalUnit: BodyCalUnit = BodyCalUnit()
 )
 
 @Root(name = "Body", strict = false)
-data class BodyCalUnidad @JvmOverloads constructor(
+data class BodyCalUnit @JvmOverloads constructor(
     @field:Element(name = "getCalifUnidadesByAlumnoResponse ", required = false)
-    var getCalifUnidadesByAlumnoResponse : getCalifUnidadesByAlumnoResponse  = getCalifUnidadesByAlumnoResponse ()
+    var getCalUnitResponse : getCalUnitResponse  = getCalUnitResponse ()
 )
 
-@Root(name = "getAllKardexConPromedioByAlumnoResponse", strict = false)
-data class getCalifUnidadesByAlumnoResponse  @JvmOverloads constructor(
+@Root(name = "getCalifUnidadesByAlumnoResponse", strict = false)
+data class getCalUnitResponse  @JvmOverloads constructor(
     @field:Element(name = "getCalifUnidadesByAlumnoResult", required = false)
     var getCalifUnidadesByAlumnoResult: String = ""
 )
+
 @Serializable
-data class CalificacionPorUnidad(
+data class CalPorUnidad(
     @SerialName("Observaciones")
     val Observaciones: String?,
 
@@ -74,8 +75,5 @@ data class CalificacionPorUnidad(
 
     @SerialName("Grupo")
     val Grupo: String?
-
-
-
 )
 

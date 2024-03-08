@@ -7,10 +7,11 @@ import retrofit2.http.Body
 import retrofit2.http.Headers
 import retrofit2.http.POST
 import com.example.evaluacion_u1.model.Envelope
-import com.example.evaluacion_u1.model.EnvelopeCalFinal
-import com.example.evaluacion_u1.model.EnvelopeCalUnidad
-import com.example.evaluacion_u1.model.EnvelopeCarga
-import com.example.evaluacion_u1.model.EnvelopeKardex
+import com.example.evaluacion_u1.model.Envelope2
+import com.example.evaluacion_u1.model.Envelope3
+import com.example.evaluacion_u1.model.Envelope4
+import com.example.evaluacion_u1.model.Envelope5
+import com.example.evaluacion_u1.model.Envelope6
 
 interface LoginSICEApiService {
     @Headers(
@@ -26,72 +27,85 @@ interface LoginSICEApiService {
     )
     @POST("/ws/wsalumnos.asmx")
     fun getAcademicProfile(@Body body: RequestBody): Call<Envelope>
-
 }
 
-interface Kardex {
+//CArga Academica
+interface CargaAcademicaApiService {
     @Headers(
         "Content-Type: text/xml; charset=utf-8",
         "SOAPAction: http://tempuri.org/accesoLogin"
     )
     @POST("/ws/wsalumnos.asmx")
-    fun login(@Body body: RequestBody): Call<ResponseBody>
+    fun login2(@Body body2: RequestBody): Call<ResponseBody>
+
+    @Headers(
+        "Content-Type: text/xml; charset=utf-8",
+        "SOAPAction: http://tempuri.org/getCargaAcademicaByAlumno"
+    )
+    @POST("/ws/wsalumnos.asmx")
+    fun getCargaByAlumno(@Body body2: RequestBody): Call<Envelope2>
+}
+
+interface KardexApiService{
+    @Headers(
+        "Content-Type: text/xml; charset=utf-8",
+        "SOAPAction: http://tempuri.org/accesoLogin"
+    )
+    @POST("/ws/wsalumnos.asmx")
+    fun login3(@Body body3: RequestBody): Call<ResponseBody>
 
     @Headers(
         "Content-Type: text/xml; charset=utf-8",
         "SOAPAction: http://tempuri.org/getAllKardexConPromedioByAlumno"
     )
     @POST("/ws/wsalumnos.asmx")
-    fun getKardex(@Body body: RequestBody): Call<EnvelopeKardex>
-
+    fun getAllkardex(@Body body3: RequestBody): Call<Envelope3>
 }
-interface CalUnidad {
+
+interface CalifByUnidades{
     @Headers(
         "Content-Type: text/xml; charset=utf-8",
         "SOAPAction: http://tempuri.org/accesoLogin"
     )
     @POST("/ws/wsalumnos.asmx")
-    fun login(@Body body: RequestBody): Call<ResponseBody>
+    fun login4(@Body body4: RequestBody): Call<ResponseBody>
 
     @Headers(
         "Content-Type: text/xml; charset=utf-8",
         "SOAPAction: http://tempuri.org/getCalifUnidadesByAlumno"
     )
     @POST("/ws/wsalumnos.asmx")
-    fun getCalUnidad(@Body BodyCalUnidad: RequestBody): Call<EnvelopeCalUnidad>
-
+    fun getAllCalifbyUnidad(@Body body4: RequestBody): Call<Envelope4>
 }
 
-interface CalFinal {
+interface AllCalificacionFin{
     @Headers(
         "Content-Type: text/xml; charset=utf-8",
         "SOAPAction: http://tempuri.org/accesoLogin"
     )
     @POST("/ws/wsalumnos.asmx")
-    fun login(@Body body: RequestBody): Call<ResponseBody>
+    fun login5(@Body body5: RequestBody): Call<ResponseBody>
 
     @Headers(
         "Content-Type: text/xml; charset=utf-8",
         "SOAPAction: http://tempuri.org/getAllCalifFinalByAlumnos"
     )
     @POST("/ws/wsalumnos.asmx")
-    fun getCalFinal(@Body body: RequestBody): Call<EnvelopeCalFinal>
-
+    fun getAllCalifFinal(@Body body5: RequestBody): Call<Envelope5>
 }
 
-interface CargaAcademica {
+interface CalificacionPorUnidadd{
     @Headers(
         "Content-Type: text/xml; charset=utf-8",
-        "SOAPAction: http://tempuri.org/getCargaAcademicaByAlumno"
+        "SOAPAction: http://tempuri.org/accesoLogin"
     )
     @POST("/ws/wsalumnos.asmx")
-    fun login(@Body body: RequestBody): Call<ResponseBody>
+    fun login6(@Body body6: RequestBody): Call<ResponseBody>
 
     @Headers(
         "Content-Type: text/xml; charset=utf-8",
-        "SOAPAction: http://tempuri.org/getAllCalifFinalByAlumnos"
+        "SOAPAction: http://tempuri.org/getCalifUnidadesByAlumno"
     )
     @POST("/ws/wsalumnos.asmx")
-    fun getCargaAcademica(@Body body: RequestBody): Call<EnvelopeCarga>
-
+    fun getCalificacionPorUnidad(@Body body6: RequestBody): Call<Envelope6>
 }

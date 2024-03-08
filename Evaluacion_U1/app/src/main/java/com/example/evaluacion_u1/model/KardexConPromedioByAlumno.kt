@@ -6,13 +6,12 @@ import org.simpleframework.xml.Element
 import org.simpleframework.xml.Root
 
 @Root(name = "Envelope", strict = false)
-data class EnvelopeKardex @JvmOverloads constructor(
+data class Envelope3 @JvmOverloads constructor(
     @field:Element(name = "Body", required = false)
-    var bodykardex: BodyKardex = BodyKardex()
+    var body3: Body3 = Body3()
 )
-
 @Root(name = "Body", strict = false)
-data class BodyKardex @JvmOverloads constructor(
+data class Body3 @JvmOverloads constructor(
     @field:Element(name = "getAllKardexConPromedioByAlumnoResponse", required = false)
     var getAllKardexConPromedioByAlumnoResponse: GetAllKardexConPromedioByAlumnoResponse = GetAllKardexConPromedioByAlumnoResponse()
 )

@@ -55,19 +55,10 @@ import okhttp3.ResponseBody
 fun PantallaPrincipal(navController: NavController, viewModel: DataViewModel) {
     val context = LocalContext.current
     var user by remember { mutableStateOf("") }
-    var pass by remember {
-        mutableStateOf("")
-    }
-    var isValidUser by remember {
-        mutableStateOf(false)
-    }
-    var isValidPass by remember {
-        mutableStateOf(false)
-    }
-    var passVisible by remember {
-        mutableStateOf(false)
-    }
-
+    var pass by remember { mutableStateOf("") }
+    var isValidUser by remember { mutableStateOf(false) }
+    var isValidPass by remember { mutableStateOf(false) }
+    var passVisible by remember { mutableStateOf(false) }
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -249,6 +240,7 @@ private fun authenticate(
             if (response.isSuccessful) {
                 Log.w("exito", "se obtuvo el perfil")
                 getAcademicProfile(context, navController, viewModel)
+                //getCargaAcademica(context,navController,viewModel)
             } else {
                 showError(
                     context,
@@ -264,7 +256,7 @@ private fun authenticate(
     })
 }
 
-private fun getAcademicProfile(
+ fun getAcademicProfile(
     context: Context,
     navController: NavController,
     viewModel: DataViewModel
